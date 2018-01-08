@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/recommand_designToolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="@color/violetMainColor"
+		android:gravity="center">
+	</android.support.v7.widget.Toolbar>
+
+	<ScrollView
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+		  android:orientation="vertical"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent">
+
+			<TextView
+				android:id="@+id/subject"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="22dp"
+				android:textStyle="bold"
+				android:paddingLeft="5dp"
+				android:textColor="@color/black"/>
+
+			<TextView
+				android:id="@+id/pyeong"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="15dp"
+				android:padding="5dp"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="5dp">
+				<TextView
+					android:id="@+id/hashtag"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="17dp"
+					android:padding="3dp"
+					android:background="@drawable/xml_border"/>
+			</LinearLayout>
+
+			<TextView android:id="@+id/place1"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="17dp"
+				android:textStyle="bold"
+				android:paddingTop="5dp"
+				android:paddingLeft="5dp"/>
+
+			<TextView
+				android:id="@+id/explain1"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="2dp"
+				android:paddingLeft="5dp"
+				android:textSize="17dp" />
+
+			<com.windeco.listviewfeed.view.BannerImageView
+				android:id="@+id/image1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:scaleType="fitXY"
+				android:visibility="visible"
+				android:layout_marginBottom="5dp"/>
+
+			<TextView android:id="@+id/place2"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="17dp"
+				android:textStyle="bold"
+				android:paddingTop="5dp"
+				android:paddingLeft="5dp"/>
+
+			<TextView android:id="@+id/explain2"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="17dp"
+				android:paddingTop="2dp"
+				android:paddingLeft="5dp"/>
+
+			<com.windeco.listviewfeed.view.BannerImageView
+				android:id="@+id/image2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:scaleType="fitXY"
+				android:visibility="visible"
+				android:layout_marginBottom="5dp"/>
+
+			<TextView android:id="@+id/place3"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="17dp"
+				android:textStyle="bold"
+				android:paddingTop="5dp"
+				android:paddingLeft="5dp"/>
+
+			<TextView android:id="@+id/explain3"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="17dp"
+				android:paddingTop="2dp"
+				android:paddingLeft="5dp"/>
+
+			<com.windeco.listviewfeed.view.BannerImageView
+				android:id="@+id/image3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:scaleType="fitXY"
+				android:visibility="visible"/>
+
+			<LinearLayout
+				android:id="@+id/requestBtnBackgroud"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="20dp">
+
+				<LinearLayout
+					android:id="@+id/likeBtnLayout"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_margin="12dp"
+					android:padding="10dp"
+					android:background="@drawable/xml_border_mainview_right_button"
+					android:layout_weight="1"
+					android:clickable="true"
+					android:gravity="center">
+
+					<ImageView
+						android:id="@+id/likeBtn"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/unlike"/>
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="좋아요"
+						android:textSize="13dp"/>
+				</LinearLayout>
+
+				<Button
+					android:id="@+id/consultResBtn"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="10dp"
+					android:background="@drawable/xml_border_mainview_left_button"
+					android:textSize="13dp"
+					android:textColor="@color/white"
+					android:text="1:1 견적문의"
+					android:layout_margin="10dp"
+					android:layout_weight="1">
+				</Button>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

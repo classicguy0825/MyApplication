@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/requestBtnBackgroud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/feed_item_border">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xml_border_mainview_left_button"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:text="가상 설치 서비스"
+                android:layout_margin="7dp"
+                android:layout_weight="1">
+            </Button>
+            <Button
+                android:id="@+id/consultRequestBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xml_border_mainview_right_button"
+                android:textSize="15dp"
+                android:textColor="@color/violetMainColor"
+                android:text="1:1 견적문의"
+                android:layout_margin="7dp"
+                android:layout_weight="1">
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recommend__subtitle"
+            android:layout_below="@id/requestBtnBackgroud"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:textSize="17dp"
+                android:textColor="@color/black"
+                android:text="커튼꾸미기 추천 디자인"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@id/recommend__subtitle">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/bannerViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:id="@+id/bannerDotsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/installation_example_subtitle"
+            android:layout_below="@+id/bannerDotsLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="17dp"
+                android:textColor="@color/black"
+                android:text="커튼꾸미기 시공사례"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/listview_layout"
+            android:layout_below="@id/installation_example_subtitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.windeco.listviewfeed.CustomListView
+                android:id="@+id/list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:divider="@null" />
+        </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/feed_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants">
+
+        <LinearLayout
+            android:id="@+id/listviewImage"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:orientation="vertical">
+
+            <com.windeco.listviewfeed.view.FeedImageView
+                android:id="@+id/feedImage1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="17dp"
+            android:text="커튼명가창 님"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_alignBottom="@+id/listviewImage"/>
+
+        <TextView
+            android:id="@+id/installedAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="수원시 권선구 서둔동 성일 아파트"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_above="@+id/companyName"/>
+
+        <TextView
+            android:id="@+id/likeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            android:text="2"
+            android:textStyle="bold"
+            android:layout_alignRight="@+id/listviewImage"
+            android:layout_alignBottom="@+id/listviewImage"/>
+
+        <ImageButton
+            android:id="@+id/likeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/unlike"
+            android:layout_toLeftOf="@id/likeCount"
+            android:layout_alignBottom="@id/likeCount">
+        </ImageButton>
+
+    </RelativeLayout>
+</LinearLayout>
