@@ -70,8 +70,7 @@ public class MainActivity extends AppCompatActivity
     private String URL_BANNER = "https://mission22.herokuapp.com/public/images/banner.json";
     private String URL_FEED = "https://mission22.herokuapp.com/public/images/feed.json";
 
-    private String URL_MONGO = "http://192.168.0.5:3000/process/listuser";
-
+    //private String URL_MONGO = "http://192.168.0.5:3000/process/listuser";
     //private String URL_BANNER = "https://mission22.herokuapp.com/public/images/feed.json";
 
     private static final String logTag = "SwipeDetector";
@@ -96,20 +95,19 @@ public class MainActivity extends AppCompatActivity
         bannerItems = new ArrayList<BannerItem>();
         feedItems = new ArrayList<FeedItem>();
 
-
         /*===================Banner Pager Configuration=================*/
         mBannerViewPager = (ViewPager) findViewById(R.id.bannerViewPager);
         mBannerDotsLayout= (LinearLayout) findViewById(R.id.bannerDotsLayout);
         mBannerPagerAdapter = new BannerPagerAdapter(MainActivity.this, bannerItems);
         autoSwipeBanner();
 
-        getFeedJson(URL_MONGO);
+        //getFeedJson(URL_MONGO);
 
         // ListView Start
         listView = (CustomListView) findViewById(R.id.list);
-        listAdapter = new FeedListAdapter(this, feedItems);
+        //listAdapter = new FeedListAdapter(this, feedItems);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(MainActivity.this ,feedItems.get(position).getName(), Toast.LENGTH_SHORT).show();
@@ -121,12 +119,11 @@ public class MainActivity extends AppCompatActivity
                 startActivity(i);
                 Log.d(logTag, "OnItemClick");
             }
-        });
+        });*/
+
         // ListView End
-
         getItemUrl(URL_BANNER);
-        getItemUrl(URL_FEED);
-
+        //getItemUrl(URL_FEED);
 
         numberOfBannerImage = bannerItems.size();
         mBannerDotViews = new View[numberOfBannerImage]; // create an empty array;
@@ -139,23 +136,21 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onPageSelected(int position) {
-
                 changeDotBG(position);
                 //Toast.makeText(MainActivity.this,"swipe clicked"+position, Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
         /*===========================END Banner Configuration Code ======================================*/
 
         mBannerViewPager.setAdapter(mBannerPagerAdapter);
-        listView.setAdapter(listAdapter);
+        //listView.setAdapter(listAdapter);
     }
 
-    public void getFeedJson(String url) {
+    /*public void getFeedJson(String url) {
 
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -187,9 +182,7 @@ public class MainActivity extends AppCompatActivity
         request.setShouldCache(false);
         Volley.newRequestQueue(this).add(request);
         //println("웹서버에 요청함 : " + url);
-    }
-
-
+    }*/
 
     private void setDrawer(Toolbar toolbar) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -271,21 +264,21 @@ public class MainActivity extends AppCompatActivity
 
 @Override
 public void onResponse(JSONObject response) {
-        VolleyLog.d(TAG, "Response: " + response.toString());
-        if (response != null) {
-        parseJsonFeed(response);
-        }
-        }
-        }, new Response.ErrorListener() {
+            VolleyLog.d(TAG, "Response: " + response.toString());
+            if (response != null) {
+            parseJsonFeed(response);
+            }
+            }
+            }, new Response.ErrorListener() {
 
-        @Override
-        public void onErrorResponse(VolleyError error) {
-        VolleyLog.d(TAG, "Error: " + error.getMessage());
-        }
-        });
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+            });
 
-        // Adding request to volley request queue
-        AppController.getInstance().addToRequestQueue(jsonReq);
+            // Adding request to volley request queue
+            AppController.getInstance().addToRequestQueue(jsonReq);
         }
     }
 
@@ -323,7 +316,7 @@ public void onResponse(JSONObject response) {
         }
     }
 
-    private void parseJsonFeeds(JSONArray response) {
+    /*private void parseJsonFeeds(JSONArray response) {
 
         JSONArray feedItemArray = response;
         //int feedItemsLength = response.length();
@@ -351,7 +344,7 @@ public void onResponse(JSONObject response) {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
+    }*/
     private void parseJsonFeed(JSONObject response) {
 
         JSONArray jsonName = response.names();
